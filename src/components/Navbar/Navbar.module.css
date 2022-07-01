@@ -1,0 +1,20 @@
+nav {
+    background-color: var(--elements);
+}
+
+button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--font);
+    width: 6.1rem;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 2px solid var(--font);
+    border-radius: 0.5rem;
+}

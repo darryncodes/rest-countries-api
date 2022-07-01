@@ -1,0 +1,34 @@
+// :root {
+//     /* Dark Mode Elements */
+//     --clr-blue: hsl(209, 23%, 22%);
+//     /* Dark Mode Background */
+//     --clr-dark-blue: hsl(207, 26%, 17%);
+//     /* Light Mode Text */
+//     --clr-very-dark-blue: hsl(200, 15%, 8%);
+//     /* Light Mode Input */
+//     --clr-dark-gray: hsl(0, 0%, 52%);
+//     /* Light Mode Background */
+//     --clr-very-light-gray: hsl(0, 0%, 98%);
+//     /* Dark Mode Text & Light Mode Elements */
+//     --clr-white: hsl(0, 0%, 100%);
+// }
+
+body {
+    --background: hsl(0, 0%, 98%);
+    --font: hsl(200, 15%, 8%);
+    --elements: hsl(0, 0%, 100%);
+    --input: hsl(0, 0%, 52%);
+}
+
+body[data-theme="dark"] {
+    --background: hsl(207, 26%, 17%);
+    --font: hsl(0, 0%, 100%);
+    --elements: hsl(209, 23%, 22%);
+    --input: hsl(209, 23%, 22%);
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    background-color: var(--background);
+    color: var(--font);
+}
