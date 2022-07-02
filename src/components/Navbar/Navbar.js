@@ -7,6 +7,8 @@ import { BsSun } from "react-icons/bs";
 
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 
+import Home from "./../pages/Home";
+
 function Navbar() {
     const [darkMode, setDarkMode] = useState(true);
 
@@ -21,33 +23,35 @@ function Navbar() {
     }
 
     return (
-        <BrowserRouter>
-            <nav>
-                <Container className="d-flex justify-content-between py-3">
-                    <p>
-                        <a href="/" as={Link} to="/">
-                            Where in the world?
-                        </a>
-                    </p>
-                    <button onClick={toggleDarkMode}>
-                        {darkMode ? (
-                            <>
-                                <BsMoonStars /> Dark Mode
-                            </>
-                        ) : (
-                            <>
-                                <BsSun /> Light Mode
-                            </>
-                        )}
-                    </button>
-                </Container>
-            </nav>
-            <div>
-                <Routes>
-                    <Route path="/" />
-                </Routes>
-            </div>
-        </BrowserRouter>
+        <>
+            <BrowserRouter>
+                <nav>
+                    <Container className="d-flex justify-content-between py-3">
+                        <p>
+                            <a href="/" as={Link} to="/">
+                                Where in the world?
+                            </a>
+                        </p>
+                        <button onClick={toggleDarkMode}>
+                            {darkMode ? (
+                                <>
+                                    <BsMoonStars /> Dark Mode
+                                </>
+                            ) : (
+                                <>
+                                    <BsSun /> Light Mode
+                                </>
+                            )}
+                        </button>
+                    </Container>
+                </nav>
+                <div>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </>
     );
 }
 
