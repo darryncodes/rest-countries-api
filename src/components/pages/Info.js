@@ -1,10 +1,6 @@
 import React from "react";
 
 function Info() {
-    return (
-        <>
-            <h1>INFO PAGE</h1>
-        </>
-    );
+    return <main></main>;
 }
 export default Info;

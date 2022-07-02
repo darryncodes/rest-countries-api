@@ -1,5 +1,6 @@
 nav {
     background-color: var(--elements);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 button {
@@ -8,6 +9,7 @@ button {
     align-items: center;
     outline: none;
     border: none;
+    border-radius: 0.2rem;
     background: none;
     color: var(--font);
     width: 6.1rem;
@@ -16,5 +18,5 @@ button {
 
 button:focus {
     outline: 2px solid var(--font);
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
 }

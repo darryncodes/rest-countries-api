@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container";
 import { BsMoonStars } from "react-icons/bs";
 import { BsSun } from "react-icons/bs";
 
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
+
 function Navbar() {
     const [darkMode, setDarkMode] = useState(true);
 
@@ -19,10 +21,14 @@ function Navbar() {
     }
 
     return (
-        <>
+        <BrowserRouter>
             <nav>
                 <Container className="d-flex justify-content-between py-3">
-                    <h1>Where in the world?</h1>{" "}
+                    <p>
+                        <a href="/" as={Link} to="/">
+                            Where in the world?
+                        </a>
+                    </p>
                     <button onClick={toggleDarkMode}>
                         {darkMode ? (
                             <>
@@ -36,7 +42,12 @@ function Navbar() {
                     </button>
                 </Container>
             </nav>
-        </>
+            <div>
+                <Routes>
+                    <Route path="/" />
+                </Routes>
+            </div>
+        </BrowserRouter>
     );
 }
 
