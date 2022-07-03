@@ -7,7 +7,7 @@ import styles from "./CountryCard.module.css";
 function CountryCard(props) {
     return (
         <Col>
-            <Card className={styles.card} style={{ minWidth: "15rem" }}>
+            <Card className={styles.card} style={{ width: "15rem" }}>
                 <Card.Img variant="top" src={props.flag} alt={props.name} />
                 <Card.Body className={styles.body}>
                     <Card.Title>{props.name}</Card.Title>

@@ -1,6 +1,7 @@
 .card {
-    margin-bottom: 1rem;
     border: none !important;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .body {

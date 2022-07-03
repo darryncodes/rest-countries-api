@@ -67,9 +67,9 @@ function Home() {
 
     // const filteredData = () => {
     //     countries
-    //         .filter((item) =>
-    //             item.name.toLowerCase().includes(search.toLowerCase())
-    //         )
+    // .filter((item) =>
+    //     item.name.toLowerCase().includes(search.toLowerCase())
+    // )
     //         .filter(
     //             (item) => regionFilter === "" || item.region === regionFilter
     //         );
@@ -78,28 +78,40 @@ function Home() {
 
     console.log(countries);
 
+    const searchFunction = (countries) => {
+        return countries.filter((item) =>
+            item.name.common.toLowerCase().includes(search.toLowerCase())
+        );
+    };
+
+    // const searchFunction = (countries) => {
+    //     return countries.filter(
+    //         (item) => regionFilter === "" || item.region === regionFilter
+    //     );
+    // };
+
     return (
         <main>
             <Container>
                 <Col className="d-flex justify-content-between py-5">
                     <label htmlFor="search">
-                        <BsSearch />
+                        <BsSearch className={styles.search} />
                         <input
                             id="search"
                             type="text"
                             value={search}
                             onChange={searchHandler}
-                            placeholder="Search for a country ..."
+                            placeholder=" Search for a country ..."
                         />
                     </label>
                     <label htmlFor="filter">
                         <select id="filter" onChange={filterInputHandler}>
                             <option value="">Filter by Region</option>
-                            <option value="africa">Africa</option>
-                            <option value="america">America</option>
-                            <option value="asia">Asia</option>
-                            <option value="europe">Europe</option>
-                            <option value="oceania">Oceania</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Americas">America</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Oceania">Oceania</option>
                         </select>
                     </label>
                 </Col>
@@ -118,7 +130,7 @@ function Home() {
             </Container>
             <Container>
                 <Row>
-                    {countries.map((item, id) => {
+                    {searchFunction(countries).map((item, id) => {
                         return (
                             <>
                                 <CountryCard

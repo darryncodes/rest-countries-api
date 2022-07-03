@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./Navbar.module.css";
+import styles from "./Navbar.module.css";
 import Container from "react-bootstrap/Container";
 import { BsMoonStars } from "react-icons/bs";
 import { BsSun } from "react-icons/bs";
@@ -26,9 +26,14 @@ function Navbar() {
         <>
             <BrowserRouter>
                 <nav>
-                    <Container className="d-flex justify-content-between py-3">
+                    <Container className="d-flex justify-content-between align-items-center py-3">
                         <p>
-                            <a href="/" as={Link} to="/">
+                            <a
+                                href="/"
+                                as={Link}
+                                to="/"
+                                className={styles.link}
+                            >
                                 Where in the world?
                             </a>
                         </p>
