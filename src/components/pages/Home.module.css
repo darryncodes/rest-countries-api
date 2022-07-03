@@ -4,12 +4,19 @@ label {
 
 input,
 select {
-    padding: 0.2rem 1em;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
     border: none;
     border-radius: 0.25rem;
     color: var(--font);
     background: var(--elements);
+}
+
+input {
+    padding: 0.2rem 2rem;
+}
+
+select {
+    padding: 0.2rem 1rem;
 }
 
 ::placeholder {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./Country.module.css";
 
@@ -12,7 +13,9 @@ function Country() {
     return (
         <main>
             <Container>
-                <button className={styles.btn}>&#8592; Back</button>
+                <Link to={"/"}>
+                    <button className={styles.btn}>&#8592; Back</button>
+                </Link>
             </Container>
             <Container>
                 <Row>

@@ -45,37 +45,6 @@ function Home() {
         setLoading(false);
     }, []);
 
-    // const filterData = () => {
-    //     countries
-    //         .filter((item) =>
-    //             item.name.toLowerCase().includes(search.toLowerCase())
-    //         )
-    //         .filter(
-    //             (item) => regionFilter === "" || item.region === regionFilter
-    //         )
-    //         .map((item, id) => {
-    //             return {
-    //                 key: id,
-    //                 flag: item.flags.png,
-    //                 name: item.name,
-    //                 population: item.population,
-    //                 region: item.region,
-    //                 capital: item.capital,
-    //             };
-    //         });
-    // };
-
-    // const filteredData = () => {
-    //     countries
-    // .filter((item) =>
-    //     item.name.toLowerCase().includes(search.toLowerCase())
-    // )
-    //         .filter(
-    //             (item) => regionFilter === "" || item.region === regionFilter
-    //         );
-    //     return item;
-    // };
-
     console.log(countries);
 
     const searchFunction = (countries) => {
