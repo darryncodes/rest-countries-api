@@ -1,23 +1,24 @@
 import React from "react";
 
 import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
 import styles from "./CountryCard.module.css";
 
-import img from "./../../test-image.svg";
-
-function CountryCard() {
+function CountryCard(props) {
     return (
-        <>
-            <Card className={styles.card}>
-                <Card.Img variant="top" src={img} />
-                <Card.Body>
-                    <Card.Title>Country</Card.Title>
-                    <Card.Text>Population:</Card.Text>
-                    <Card.Text>Region:</Card.Text>
-                    <Card.Text>Capital:</Card.Text>
+        <Col>
+            <Card className={styles.card} style={{ minWidth: "15rem" }}>
+                <Card.Img variant="top" src={props.flag} alt={props.name} />
+                <Card.Body className={styles.body}>
+                    <Card.Title>{props.name}</Card.Title>
+                    <Card.Text>
+                        Population: {props.population.toLocaleString()}
+                    </Card.Text>
+                    <Card.Text>Region: {props.region}</Card.Text>
+                    <Card.Text>Capital: {props.capital}</Card.Text>
                 </Card.Body>
             </Card>
-        </>
+        </Col>
     );
 }
 
