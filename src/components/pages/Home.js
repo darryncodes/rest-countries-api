@@ -45,8 +45,6 @@ function Home() {
         setLoading(false);
     }, []);
 
-    console.log(countries);
-
     const searchFunction = (countries) => {
         return countries.filter((item) =>
             item.name.common.toLowerCase().includes(search.toLowerCase())
