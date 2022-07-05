@@ -1,3 +1,16 @@
+.row {
+    padding: 3rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 527px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
 label {
     position: relative;
 }
@@ -24,6 +37,12 @@ select:focus {
 
 select {
     padding: 0.2rem 1rem;
+}
+
+@media only screen and (max-width: 527px) {
+    label select {
+        margin-top: 1rem;
+    }
 }
 
 ::placeholder {

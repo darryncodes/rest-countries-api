@@ -56,7 +56,7 @@ function Home() {
     //         (item) => regionFilter === "" || item.region === regionFilter
     //     );
     // };
-
+    // className = "d-flex justify-content-between py-5 sm";
     return (
         <>
             <header className={styles.srOnly}>
@@ -64,34 +64,41 @@ function Home() {
             </header>
             <main>
                 <Container>
-                    <Col className="d-flex justify-content-between py-5 sm">
-                        <label
-                            htmlFor="search"
-                            aria-label="Search here for a country"
-                        >
-                            <BsSearch className={styles.search} />
-                            <input
-                                id="search"
-                                type="text"
-                                value={search}
-                                onChange={searchHandler}
-                                placeholder="Search for a country ..."
-                            />
-                        </label>
-                        <label
-                            htmlFor="filter"
-                            aria-label="Filter your search here by region"
-                        >
-                            <select id="filter" onChange={filterInputHandler}>
-                                <option value="">Filter by Region</option>
-                                <option value="Africa">Africa</option>
-                                <option value="Americas">America</option>
-                                <option value="Asia">Asia</option>
-                                <option value="Europe">Europe</option>
-                                <option value="Oceania">Oceania</option>
-                            </select>
-                        </label>
-                    </Col>
+                    <div className={styles.row}>
+                        <Col>
+                            <label
+                                htmlFor="search"
+                                aria-label="Search here for a country"
+                            >
+                                <BsSearch className={styles.search} />
+                                <input
+                                    id="search"
+                                    type="text"
+                                    value={search}
+                                    onChange={searchHandler}
+                                    placeholder="Search for a country ..."
+                                />
+                            </label>
+                        </Col>
+                        <div>
+                            <label
+                                htmlFor="filter"
+                                aria-label="Filter your search here by region"
+                            >
+                                <select
+                                    id="filter"
+                                    onChange={filterInputHandler}
+                                >
+                                    <option value="">Filter by Region</option>
+                                    <option value="Africa">Africa</option>
+                                    <option value="Americas">America</option>
+                                    <option value="Asia">Asia</option>
+                                    <option value="Europe">Europe</option>
+                                    <option value="Oceania">Oceania</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
                     {loading && (
                         <div className={styles.loader}>
                             <div></div>
