@@ -20,9 +20,10 @@ button {
 button:focus {
     outline: 2px solid var(--font);
     border-radius: 0.2rem;
+    outline-offset: 2px;
 }
 
-p .link {
+nav p {
     margin: 0;
 }
 
@@ -35,4 +36,10 @@ p .link {
 
 .link:hover {
     color: var(--font);
+}
+
+.link:focus {
+    outline: 2px solid var(--font);
+    border-radius: 0.2rem;
+    outline-offset: 2px;
 }

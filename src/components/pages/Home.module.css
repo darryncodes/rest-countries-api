@@ -15,6 +15,13 @@ input {
     padding: 0.2rem 2rem;
 }
 
+input:focus,
+select:focus {
+    outline: 2px solid var(--font);
+    border-radius: 0.2rem;
+    outline-offset: 2px;
+}
+
 select {
     padding: 0.2rem 1rem;
 }
@@ -28,6 +35,18 @@ select {
     position: absolute;
     top: 7px;
     left: 5px;
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
 }
 
 .loader {

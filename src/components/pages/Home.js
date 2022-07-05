@@ -58,62 +58,73 @@ function Home() {
     // };
 
     return (
-        <main>
-            <Container>
-                <Col className="d-flex justify-content-between py-5">
-                    <label htmlFor="search">
-                        <BsSearch className={styles.search} />
-                        <input
-                            id="search"
-                            type="text"
-                            value={search}
-                            onChange={searchHandler}
-                            placeholder=" Search for a country ..."
-                        />
-                    </label>
-                    <label htmlFor="filter">
-                        <select id="filter" onChange={filterInputHandler}>
-                            <option value="">Filter by Region</option>
-                            <option value="Africa">Africa</option>
-                            <option value="Americas">America</option>
-                            <option value="Asia">Asia</option>
-                            <option value="Europe">Europe</option>
-                            <option value="Oceania">Oceania</option>
-                        </select>
-                    </label>
-                </Col>
-                {loading && (
-                    <div className={styles.loader}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                )}
-            </Container>
-            <Container>
-                <Row>
-                    {searchFunction(countries).map((item, id) => {
-                        return (
-                            <>
-                                <CountryCard
-                                    key={id}
-                                    flag={item.flags.png}
-                                    name={item.name.common}
-                                    population={item.population}
-                                    region={item.region}
-                                    capital={item.capital}
-                                />
-                            </>
-                        );
-                    })}
-                </Row>
-            </Container>
-        </main>
+        <>
+            <header className={styles.srOnly}>
+                <h1>Find out information about countries around the world</h1>
+            </header>
+            <main>
+                <Container>
+                    <Col className="d-flex justify-content-between py-5 sm">
+                        <label
+                            htmlFor="search"
+                            aria-label="Search here for a country"
+                        >
+                            <BsSearch className={styles.search} />
+                            <input
+                                id="search"
+                                type="text"
+                                value={search}
+                                onChange={searchHandler}
+                                placeholder="Search for a country ..."
+                            />
+                        </label>
+                        <label
+                            htmlFor="filter"
+                            aria-label="Filter your search here by region"
+                        >
+                            <select id="filter" onChange={filterInputHandler}>
+                                <option value="">Filter by Region</option>
+                                <option value="Africa">Africa</option>
+                                <option value="Americas">America</option>
+                                <option value="Asia">Asia</option>
+                                <option value="Europe">Europe</option>
+                                <option value="Oceania">Oceania</option>
+                            </select>
+                        </label>
+                    </Col>
+                    {loading && (
+                        <div className={styles.loader}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    )}
+                </Container>
+                <Container>
+                    <Row>
+                        {searchFunction(countries).map((item, id) => {
+                            return (
+                                <>
+                                    <CountryCard
+                                        key={id}
+                                        flag={item.flags.png}
+                                        name={item.name.common}
+                                        population={item.population}
+                                        region={item.region}
+                                        capital={item.capital}
+                                    />
+                                </>
+                            );
+                        })}
+                    </Row>
+                </Container>
+            </main>
+        </>
     );
 }
 export default Home;

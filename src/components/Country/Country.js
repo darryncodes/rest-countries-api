@@ -50,7 +50,10 @@ function Country() {
     return (
         <main>
             <Container>
-                <Link to={"/"} style={{ textDecoration: "none" }}>
+                <Link
+                    to={"/"}
+                    style={{ textDecoration: "none", outline: "none" }}
+                >
                     <button className={styles.btn}>&#8592; Back</button>
                 </Link>
             </Container>

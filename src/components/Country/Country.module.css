@@ -7,6 +7,12 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
+.btn:focus {
+    outline: 2px solid var(--font);
+    border-radius: 0.2rem;
+    outline-offset: 2px;
+}
+
 .border {
     margin-top: 2rem;
 }

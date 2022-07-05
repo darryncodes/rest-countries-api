@@ -16,7 +16,12 @@ function CountryCard(props) {
                 }}
             >
                 <Card className={styles.card} style={{ width: "15rem" }}>
-                    <Card.Img variant="top" src={props.flag} alt={props.name} />
+                    <Card.Img
+                        variant="top"
+                        src={props.flag}
+                        alt={props.name}
+                        className={styles.img}
+                    />
                     <Card.Body className={styles.body}>
                         <Card.Title>
                             <span>{props.name}</span>
