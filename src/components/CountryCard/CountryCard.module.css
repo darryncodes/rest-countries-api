@@ -7,4 +7,9 @@
 .body {
     background: var(--elements);
     color: var(--font);
+    font-weight: 600;
+}
+
+p span {
+    font-weight: 200;
 }

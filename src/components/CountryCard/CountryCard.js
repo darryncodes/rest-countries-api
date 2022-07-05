@@ -18,12 +18,19 @@ function CountryCard(props) {
                 <Card className={styles.card} style={{ width: "15rem" }}>
                     <Card.Img variant="top" src={props.flag} alt={props.name} />
                     <Card.Body className={styles.body}>
-                        <Card.Title>{props.name}</Card.Title>
+                        <Card.Title>
+                            <span>{props.name}</span>
+                        </Card.Title>
                         <Card.Text>
-                            Population: {props.population.toLocaleString()}
+                            Population:{" "}
+                            <span>{props.population.toLocaleString()}</span>
                         </Card.Text>
-                        <Card.Text>Region: {props.region}</Card.Text>
-                        <Card.Text>Capital: {props.capital}</Card.Text>
+                        <Card.Text>
+                            Region: <span>{props.region}</span>
+                        </Card.Text>
+                        <Card.Text>
+                            Capital: <span>{props.capital}</span>
+                        </Card.Text>
                     </Card.Body>
                 </Card>
             </Link>

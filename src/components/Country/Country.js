@@ -65,18 +65,33 @@ function Country() {
                             <div>
                                 <p>
                                     Native Name:{" "}
-                                    {nativeName[nameType[0]].common}
+                                    <span>
+                                        {nativeName[nameType[0]].common}
+                                    </span>
                                 </p>
-                                <p>Population: {population.toLocaleString()}</p>
-                                <p>Region: {region}</p>
-                                <p>Sub Region: {subregion}</p>
-                                <p>Capital: {capital}</p>
+                                <p>
+                                    Population:{" "}
+                                    <span>{population.toLocaleString()}</span>
+                                </p>
+                                <p>
+                                    Region: <span>{region}</span>
+                                </p>
+                                <p>
+                                    Sub Region: <span>{subregion}</span>
+                                </p>
+                                <p>
+                                    Capital: <span>{capital}</span>
+                                </p>
                             </div>
                             <div>
-                                <p>Top Level Domain: {tld}</p>
+                                <p>
+                                    Top Level Domain: <span>{tld}</span>
+                                </p>
                                 <p>
                                     Currencies:{" "}
-                                    {currencies[currencyType[0]].name}
+                                    <span>
+                                        {currencies[currencyType[0]].name}
+                                    </span>
                                 </p>
                                 <p>
                                     Languages:{" "}
