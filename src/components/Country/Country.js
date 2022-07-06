@@ -13,7 +13,8 @@ function Country() {
     const countries = JSON.parse(sessionStorage.getItem("countries"));
     const countryInfo = countries.find((item) => item.name.common === location);
 
-    // console.log(countryInfo);
+    console.log(countries);
+    console.log(countryInfo);
 
     const name = countryInfo.name.common;
     const nativeName = countryInfo.name.nativeName;
@@ -30,30 +31,43 @@ function Country() {
         (key) => countryInfo.languages[key]
     );
 
-    // const bordersArray = [];
-    // const borders = countryInfo.borders;
+    const borders = countryInfo.borders;
 
-    // console.log(borders);
+    // const foundBorders = borders.map((border) => {
+    //     console.log(border);
+    //     return countries.find((country) => {
+    //         // console.log(country);
+    //         // console.log(border);
 
-    // const cioc = countries.forEach((element) => {
-    //     return element.cioc;
+    //         if (country.cca3 === border) {
+    //             return country.name;
+    //         }
+    //         // return country.cioc === border;
+    //     });
     // });
 
-    // console.log(cioc);
+    const foundBorders = borders.map((border) =>
+        countries.find((country) => country.cca3 === border)
+    );
 
-    // borders.forEach((element) => {
-    //     if (element === cioc) {
-    //         bordersArray.push(countries.name);
-    //     }
-    // });
+    // const foundBorders = borders.map((border) =>
+    //     countries.find((country) => {
+    //         if (country.cca3 === border) {
+    //             return country;
+    //         }
+    //     })
+    // );
+
+    console.log(foundBorders);
+
+    const borderNames = foundBorders.map((border) => border.name.common);
+
+    console.log(borderNames);
 
     return (
         <main>
             <Container>
-                <Link
-                    to={"/"}
-                    style={{ textDecoration: "none", outline: "none" }}
-                >
+                <Link to={"/"} style={{ textDecoration: "none" }}>
                     <button className={styles.btn}>&#8592; Back</button>
                 </Link>
             </Container>
@@ -104,21 +118,24 @@ function Country() {
                                 </p>
                             </div>
                         </div>
-                        <div className={styles.border}>
-                            {/* {bordersArray.map((item, id) => (
-                                <Link
-                                    key={id}
-                                    style={{ textDecoration: "none" }}
-                                    to={{
-                                        pathname: `/${item}`,
-                                        state: { name: item },
-                                    }}
-                                >
-                                    <button className={styles.btn}>
-                                        {item}
-                                    </button>
-                                </Link>
-                            ))} */}
+                        <div>
+                            <p className={styles.border}>
+                                Border countries:
+                                {borderNames.map((item, id) => (
+                                    <Link
+                                        key={id}
+                                        style={{ textDecoration: "none" }}
+                                        to={{
+                                            pathname: `/${item}`,
+                                            state: { name: item },
+                                        }}
+                                    >
+                                        <span className={styles.btn}>
+                                            {item}
+                                        </span>
+                                    </Link>
+                                ))}
+                            </p>
                         </div>
                     </Col>
                 </Row>
