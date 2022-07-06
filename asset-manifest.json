@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/github.io/rest-countries-api/static/css/main.e25c700d.css",
+    "main.js": "/github.io/rest-countries-api/static/js/main.e5a27fd7.js",
+    "index.html": "/github.io/rest-countries-api/index.html",
+    "main.e25c700d.css.map": "/github.io/rest-countries-api/static/css/main.e25c700d.css.map",
+    "main.e5a27fd7.js.map": "/github.io/rest-countries-api/static/js/main.e5a27fd7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e25c700d.css",
+    "static/js/main.e5a27fd7.js"
+  ]
+}
