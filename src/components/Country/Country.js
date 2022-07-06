@@ -67,16 +67,19 @@ function Country() {
     console.log(borderNames);
 
     return (
-        <main>
-            <Container>
+        <>
+            <Container className="pb-5">
                 <Link to={"/"} style={{ textDecoration: "none" }}>
                     <button className={styles.btn}>&#8592; Back</button>
                 </Link>
             </Container>
             <Container>
                 <Row>
-                    <Col md className="d-flex align-items-center">
-                        <img src={flags} alt={name} />
+                    <Col
+                        md
+                        className="d-flex align-items-center justify-content-md-center"
+                    >
+                        <img src={flags} alt={name} className={styles.img} />
                     </Col>
                     <Col className="py-4">
                         <h2>{name}</h2>
@@ -142,7 +145,7 @@ function Country() {
                     </Col>
                 </Row>
             </Container>
-        </main>
+        </>
     );
 }
 

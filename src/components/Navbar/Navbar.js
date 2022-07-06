@@ -20,6 +20,16 @@ function Navbar() {
         }
     }
 
+    window.onload = function detectDarkModePreference() {
+        if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+            document.body.setAttribute("data-theme", "dark");
+            setDarkMode((prevMode) => !prevMode);
+        }
+    };
+
     return (
         <>
             <nav>
