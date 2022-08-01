@@ -46,17 +46,24 @@ function Home() {
     }, []);
 
     const searchFunction = (countries) => {
-        return countries.filter((item) =>
-            item.name.common.toLowerCase().includes(search.toLowerCase())
-        );
+        return countries.filter((item) => {
+            if (regionFilter && search) {
+                return (
+                    item.name.common
+                        .toLowerCase()
+                        .includes(search.toLowerCase()) &&
+                    item.region === regionFilter
+                );
+            }
+            if (regionFilter && !search) {
+                return item.region === regionFilter;
+            }
+            return item.name.common
+                .toLowerCase()
+                .includes(search.toLowerCase());
+        });
     };
 
-    // const searchFunction = (countries) => {
-    //     return countries.filter(
-    //         (item) => regionFilter === "" || item.region === regionFilter
-    //     );
-    // };
-    // className = "d-flex justify-content-between py-5 sm";
     return (
         <>
             <header className={styles.srOnly}>
