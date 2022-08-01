@@ -15,7 +15,7 @@ function CountryCard(props) {
                     state: { name: props.name },
                 }}
             >
-                <Card className={styles.card} style={{ width: "15rem" }}>
+                <Card className={styles.card} style={{ width: "17.5rem" }}>
                     <Card.Img
                         variant="top"
                         src={props.flag}
