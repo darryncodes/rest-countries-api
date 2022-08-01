@@ -15,9 +15,6 @@ function Country() {
     const countries = JSON.parse(sessionStorage.getItem("countries"));
     const countryInfo = countries.find((item) => item.name.common === location);
 
-    console.log(countries);
-    console.log(countryInfo);
-
     const name = countryInfo.name.common;
     const nativeName = countryInfo.name.nativeName;
     const flags = countryInfo.flags.png;
@@ -27,44 +24,18 @@ function Country() {
     const nameType = Object.keys(nativeName);
     const currencyType = Object.keys(currencies);
 
-    // languages
     const languageKeys = Object.keys(countryInfo.languages);
     const languagesArray = languageKeys.map(
         (key) => countryInfo.languages[key]
     );
 
-    const borders = countryInfo.borders;
-
-    // const foundBorders = borders.map((border) => {
-    //     console.log(border);
-    //     return countries.find((country) => {
-    //         // console.log(country);
-    //         // console.log(border);
-
-    //         if (country.cca3 === border) {
-    //             return country.name;
-    //         }
-    //         // return country.cioc === border;
-    //     });
-    // });
+    const borders = countryInfo.borders ? countryInfo.borders : [];
 
     const foundBorders = borders.map((border) =>
         countries.find((country) => country.cca3 === border)
     );
 
-    // const foundBorders = borders.map((border) =>
-    //     countries.find((country) => {
-    //         if (country.cca3 === border) {
-    //             return country;
-    //         }
-    //     })
-    // );
-
-    console.log(foundBorders);
-
     const borderNames = foundBorders.map((border) => border.name.common);
-
-    console.log(borderNames);
 
     return (
         <>
@@ -125,7 +96,9 @@ function Country() {
                         </div>
                         <div>
                             <p className={styles.border}>
-                                Border countries:
+                                {borderNames
+                                    ? borderNames
+                                    : `Border countries:`}
                                 {borderNames.map((item, id) => (
                                     <Link
                                         key={id}
