@@ -23,7 +23,6 @@ function Country() {
 
     const nameType = Object.keys(nativeName);
     const currencyType = Object.keys(currencies);
-
     const languageKeys = Object.keys(countryInfo.languages);
     const languagesArray = languageKeys.map(
         (key) => countryInfo.languages[key]

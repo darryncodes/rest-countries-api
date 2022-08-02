@@ -11,7 +11,6 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 -   [My process](#my-process)
     -   [Built with](#built-with)
     -   [What I learned](#what-i-learned)
-    -   [Continued development](#continued-development)
     -   [Useful resources](#useful-resources)
 -   [Author](#author)
 
@@ -56,15 +55,23 @@ Users should be able to:
 
 ### What I learned
 
-TBC
+One huge aha moment was learning about Object.keys(). This enabled me to access data from the api call dynamically.
 
-### Continued development
+```js
+const nativeName = countryInfo.name.nativeName;
+const nameType = Object.keys(nativeName);
 
-TBC
+<span>{nativeName[nameType[0]].common}</span>;
+```
 
 ### Useful resources
 
-TBC
+-   [MDN - Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+-   [MDN - Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+-   [MDN - Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+-   [MDN - Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+-   [MDN - decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI)
+-   [Pure CSS Loaders](https://loading.io/css/)
 
 ## Author
 
