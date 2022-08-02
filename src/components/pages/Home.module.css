@@ -25,7 +25,7 @@ select {
 }
 
 input {
-    padding: 0.2rem 2rem;
+    padding: 0.3rem 2rem;
 }
 
 input:focus,
@@ -36,7 +36,7 @@ select:focus {
 }
 
 select {
-    padding: 0.2rem 1rem;
+    padding: 0.3rem 1rem;
 }
 
 @media only screen and (max-width: 527px) {
@@ -52,8 +52,8 @@ select {
 
 .search {
     position: absolute;
-    top: 7px;
-    left: 5px;
+    top: 9px;
+    left: 10px;
 }
 
 .srOnly {
