@@ -45,6 +45,8 @@ function Home() {
         setLoading(false);
     }, []);
 
+    console.log(countries);
+
     const searchFunction = (countries) => {
         return countries.filter((item) => {
             if (regionFilter && search) {

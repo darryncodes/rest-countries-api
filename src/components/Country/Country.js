@@ -95,9 +95,11 @@ function Country() {
                         </div>
                         <div>
                             <p className={styles.border}>
-                                {borderNames
-                                    ? borderNames
-                                    : `Border countries:`}
+                                {borderNames.length === 0 ? (
+                                    ""
+                                ) : (
+                                    <span>Border countries:</span>
+                                )}
                                 {borderNames.map((item, id) => (
                                     <Link
                                         key={id}
