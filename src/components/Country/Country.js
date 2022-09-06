@@ -13,7 +13,11 @@ function Country() {
     const location = decodeURI(window.location.hash).replace("#/", "");
 
     const countries = JSON.parse(sessionStorage.getItem("countries"));
-    const countryInfo = countries.find((item) => item.name.common === location);
+    const countryInfo = countries.find((item) => item.fifa === location);
+
+    if(!countryInfo){
+        return<>No match!</>
+    }
 
     const name = countryInfo.name.common;
     const nativeName = countryInfo.name.nativeName;
