@@ -6,13 +6,14 @@ import Col from "react-bootstrap/Col";
 import styles from "./CountryCard.module.css";
 
 function CountryCard(props) {
+
     return (
         <Col>
             <Link
                 style={{ textDecoration: "none" }}
                 to={{
-                    pathname: `/${props.name}`,
-                    state: { name: props.name },
+                    pathname: `/${props.fifa}`,
+                    state: { name: props.fifa },
                 }}
             >
                 <Card className={styles.card} style={{ width: "17.5rem" }}>
