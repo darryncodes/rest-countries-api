@@ -130,7 +130,7 @@ function Home() {
                                         key={id}
                                         flag={item.flags.png}
                                         name={item.name.common}
-                                        code={item.cca3.toLowerCase}
+                                        code={item.cca3}
                                         population={item.population}
                                         region={item.region}
                                         capital={item.capital}
