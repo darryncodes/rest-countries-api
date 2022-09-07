@@ -13,10 +13,10 @@ function Country() {
     const location = decodeURI(window.location.hash).replace("#/", "");
 
     const countries = JSON.parse(sessionStorage.getItem("countries"));
-    const countryInfo = countries.find((item) => item.fifa === location);
+    const countryInfo = countries.find((item) => item.cca3 === location);
 
-    if(!countryInfo){
-        return<>No match!</>
+    if (!countryInfo) {
+        return <>No match!</>;
     }
 
     const name = countryInfo.name.common;
@@ -104,17 +104,17 @@ function Country() {
                                 ) : (
                                     <span>Border countries:</span>
                                 )}
-                                {borderNames.map((item, id) => (
+                                {foundBorders.map((item, id) => (
                                     <Link
                                         key={id}
                                         style={{ textDecoration: "none" }}
                                         to={{
-                                            pathname: `/${item}`,
-                                            state: { name: item },
+                                            pathname: `/${item.cca3}`,
+                                            state: { name: item.cca3 },
                                         }}
                                     >
-                                        <span className={styles.btn}>
-                                            {item}
+                                        <span className={styles.btn} key={id}>
+                                            {item.name.common}
                                         </span>
                                     </Link>
                                 ))}
